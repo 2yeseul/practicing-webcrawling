@@ -24,86 +24,38 @@ for o in optionVal:
     newst = st+val
     if '0' not in val:
         selList.append([newst])
-hList = []
-h2 = soupData.find_all('h2')
-
-
-table = []
-
-td = soupData.find_all('td')
-
-tb = soupData.find_all('table',{'class': 'tableRatio3'})
-
-test = []
-    #if htxt in selList:
-
-        # for j in td:
-         #   tdText = j.get_text()
-          #  print(tdText)
-        #tdText = td.get_text()
-
-
-# for i in selList:
- #   print(i)
-
-# for i in range(0,len(selList)):
-divArr = []
-divs = soupData.find_all('div')
-#td = divs.find_all('td')
-newID = []
-tdList = []
-for i in divs:
-    idName = i.get('id')
-    newID.append(idName)
-    idValue = idName.select(selList[0])
-    print(idValue)
-
-#    for j in range(0,len(selList)) :
-
-#    for j in range(0,len(selList)):
-#        if i.get('id') in selList[j]:
-#            for h in i.
-    # print(idName)
-    # for j in range(0,len(selList)):
-
-
-#    id = i.get('id')
-#    newID.append([id])
-#    tds = i.find_all('td')
-#    print(tds)
-    #for j in range(0, len(selList)):
-    #    if selList[j] in newID:
-    #       print(tds)
-           #print(i.find_all('td'))
-
-#    for j in range(0, len(selList)):
-#        if selList[j] in i.find('id'):
-#            print(selList[j])
 
 
 
-# for d in div:
-#    id = d.get('id')
-#    divs.append([id])
-#    for s in range(0, len(selList)):
-
-# for s in selList:
- #   print(s)
-#   idList.append([divs])
+data = []
 
 
-# for i in range(0, len(selList)):
+for i in soupData.find_all('table', {'class' : 'tableRatio3'}):
+    for j in i.find_all('tr'):
+        tds = list(j.find_all('td'))
+       # for td in tds:
+       #     print("")
 
 
-# for opt in optionVal:
-#    selType = opt.text
-#    selList.append([selType])
-# print(selList)
+            #print(tds[0].text)
+            #displayName = td[0].text
+            #print(displayName)
 
-# for sel in selList:
+'''
+            if '대학' not in tds:
+                displayName = tds[0].text
+                mojip = tds[1].text
+                jiwon = tds[2].text
+                ratio = tds[3].text
+                data.append([mojip, jiwon, ratio])
+'''
 
 
-# for i in listSel:
+
+
+###for tr in table.find('tr'):
+###    print(tr)
+
 
 
 '''
@@ -142,7 +94,8 @@ for tag in unit:
         print(tag)
         tag.extract()
     print(tag)
-
+    
+'''
 # for rowspan in rowspanElements:
  #   rowspan.extract()
 
@@ -152,4 +105,3 @@ for tag in unit:
 #    if '대학' not in unitList:
 #        print(unitList)
 
-'''
